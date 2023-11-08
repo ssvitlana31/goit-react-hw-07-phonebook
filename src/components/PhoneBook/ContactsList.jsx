@@ -1,16 +1,16 @@
-import React from 'react';
 import { ContactList, ContactItem, DeleteButton } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
-import { selectFilter } from 'redux/selector';
+
+import { deleteContactThunk } from 'redux/operations';
+import { selectContacts, selectFilter } from 'redux/selector';
 
 export const Contacts = () => {
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const handleDelete = id => {
-    dispatch(deleteContact(id));
+    dispatch(deleteContactThunk(id));
   };
 
   const getFilteredContacts = () => {

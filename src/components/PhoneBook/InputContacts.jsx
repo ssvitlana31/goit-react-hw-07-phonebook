@@ -3,8 +3,9 @@ import { useState } from 'react';
 import { Form, Label, Input, Button } from './Form.styled';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewContact } from 'redux/contactsSlice';
+
 import { selectContacts } from 'redux/selector';
+import { addNewContactThunc } from 'redux/operations';
 
 const initialState = {
   name: '',
@@ -28,7 +29,7 @@ export const InputContacts = () => {
       return;
     }
 
-    dispatch(addNewContact({ name, number, id: nanoid() }));
+    dispatch(addNewContactThunc({ name, number, id: nanoid() }));
     setInputData(initialState);
   };
 
