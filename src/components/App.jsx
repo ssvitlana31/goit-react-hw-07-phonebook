@@ -1,16 +1,18 @@
+import React from 'react';
+import { InputContacts } from './PhoneBook/InputContacts.jsx';
+import { Contacts } from './PhoneBook/ContactsList';
+import { Filter } from './PhoneBook/Filter';
+import { Container, Title } from './PhoneBook/Form.styled';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Container>
+      <Title>Phonebook</Title>
+      <InputContacts />
+
+      <h2>Contacts</h2>
+      <Filter />
+      <Contacts />
+    </Container>
   );
 };
