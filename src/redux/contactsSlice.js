@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { nanoid } from '@reduxjs/toolkit';
+
 import {
   addNewContactThunc,
   deleteContactThunk,
